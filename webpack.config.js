@@ -39,6 +39,9 @@ module.exports = {
     ],
   },
   resolve: {
+    alias:{
+      src:'./src'
+    },
     extensions: ['.js', '.jsx', '.scss'],
   },
   plugins: [
