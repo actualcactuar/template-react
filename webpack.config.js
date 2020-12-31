@@ -4,13 +4,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 
-console.log({ mode });
-
 module.exports = {
   entry: ['./main.jsx'],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js',
+    filename: '[name].js',
   },
   mode,
   devtool: mode === 'development' ? 'inline-source-map' : false,
@@ -18,7 +16,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /dist/],
         use: [
           {
             loader: 'babel-loader',
@@ -32,15 +30,9 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
           },
           {
             loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
           },
         ],
       },
@@ -63,4 +55,9 @@ module.exports = {
     topLevelAwait: true,
   },
   devServer: { port: 9000, hot: true, https: true, open: true },
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+    },
+  },
 };
