@@ -20,7 +20,9 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: { presets: ['@babel/preset-react'] },
+            options: {
+              babelrc: true,
+            },
           },
         ],
       },
@@ -39,8 +41,8 @@ module.exports = {
     ],
   },
   resolve: {
-    alias:{
-      src:'./src'
+    alias: {
+      src: './src',
     },
     extensions: ['.js', '.jsx', '.scss'],
   },
