@@ -1,1 +1,1 @@
-import 'regenerator-runtime/runtime';
+// Do any kind of enc setup for jest here
