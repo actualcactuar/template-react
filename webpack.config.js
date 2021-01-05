@@ -56,9 +56,6 @@ module.exports = {
       chunkFilename: '[id].css',
     }),
   ],
-  experiments: {
-    topLevelAwait: true,
-  },
   devServer: {
     port: 9000, hot: true, https: true, open: true,
   },
