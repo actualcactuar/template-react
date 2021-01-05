@@ -47,7 +47,6 @@ module.exports = {
     extensions: ['.js', '.jsx', '.scss'],
   },
   plugins: [
-    // new webpack.SourceMapDevToolPlugin({}),
     new HtmlWebpackPlugin({
       template: 'main.html',
     }),
