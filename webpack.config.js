@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const mode = process.env.NODE_ENV || 'development';
 
 module.exports = {
-  entry: ['./main.jsx'],
+  entry: ['./src/main.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
@@ -27,7 +27,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -41,14 +41,11 @@ module.exports = {
     ],
   },
   resolve: {
-    alias: {
-      src: './src',
-    },
-    extensions: ['.js', '.jsx', '.scss'],
+    extensions: ['.js', '.jsx', '.scss', '.css'],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'main.html',
+      template: './src/template.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -56,7 +53,11 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 9000, hot: true, https: true, open: true,
+    port: 9000,
+    hot: true,
+    open: true,
+    contentBase: path.join(__dirname, 'public'),
+    contentBasePublicPath: '/public',
   },
   optimization: {
     splitChunks: {

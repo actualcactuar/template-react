@@ -1,0 +1,81 @@
+check:
+  changes:
+    - '1'
+    - 5.0.0
+  label: Check
+  search:
+    terms:
+      - accept
+      - agree
+      - checkmark
+      - confirm
+      - correct
+      - done
+      - notice
+      - notification
+      - notify
+      - ok
+      - select
+      - success
+      - tick
+      - todo
+      - 'yes'
+  styles:
+    - duotone
+  unicode: f00c
+  voted: false
+cheeseburger:
+  changes:
+    - 5.7.0
+    - 5.7.1
+  label: Cheeseburger
+  search:
+    terms:
+      - bacon
+      - beef
+      - burger
+      - burger king
+      - fast food
+      - grill
+      - ground beef
+      - hamburger
+      - mcdonalds
+      - sandwich
+      - slider
+      - wendys
+      - white castle
+  styles:
+    - duotone
+  unicode: f7f1
+  voted: false
+spinner-third:
+  changes:
+    - 5.0.0
+    - 5.10.2
+  label: Spinner Third
+  search:
+    terms:
+      - circle
+      - loading
+      - progress
+  styles:
+    - duotone
+  unicode: f3f4
+  voted: false
+swatchbook:
+  changes:
+    - 5.1.0
+    - 5.11.0
+    - 5.11.1
+  label: Swatchbook
+  search:
+    terms:
+      - Pantone
+      - color
+      - design
+      - hue
+      - palette
+  styles:
+    - duotone
+  unicode: f5c3
+  voted: false
