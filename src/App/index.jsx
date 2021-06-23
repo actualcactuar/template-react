@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <p>
-      <i className='fad fa-cheeseburger' /> Hello world!
+      <i className='fad fa-cheeseburger' /> Care for a burger?
     </p>
   );
 };
