@@ -53,15 +53,29 @@ module.exports = {
     }),
   ],
   devServer: {
-    port: 9000,
+    port: 9090,
     hot: true,
     open: true,
     contentBase: path.join(__dirname, 'public'),
     contentBasePublicPath: '/public',
   },
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
-      chunks: 'async',
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name(module) {
+            const packageName = module.context.match(
+              /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+            )[1];
+            return `npm.${packageName.replace('@', '')}`;
+          },
+        },
+      },
     },
   },
 };
